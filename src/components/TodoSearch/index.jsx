@@ -1,4 +1,9 @@
-const TodoSearch = ({ search, setSearch }) => {
+import { useContext } from 'react';
+
+import { TodoContext } from '../../TodoContext';
+
+const TodoSearch = () => {
+  const { search, setSearch } = useContext(TodoContext);
   return (
     <input
       onChange={(event) => setSearch(event.target.value)}

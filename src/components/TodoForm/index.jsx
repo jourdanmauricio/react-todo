@@ -1,8 +1,14 @@
 import { useState, useEffect } from 'react';
 
-const TodoForm = ({ handleOpenModal, addTodo }) => {
+import { useContext } from 'react';
+
+import { TodoContext } from '../../TodoContext';
+
+const TodoForm = () => {
   const [newTodo, setNewTodo] = useState('');
   const [error, setError] = useState(null);
+
+  const { handleOpenModal, addTodo } = useContext(TodoContext);
 
   useEffect(() => {
     const close = (e) => {
